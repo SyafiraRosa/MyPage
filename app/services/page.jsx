@@ -8,25 +8,25 @@ const services = [
         num: "01",
         title: "Game Development",
         description: "Crafting engaging and interactive games tailored to bring your ideas to life.",
-        href:"",
+        href:"/work",
     },
     {
         num: "02",
         title: "VR/AR Development",
         description: "Creating immersive virtual and augmented reality experiences for cutting-edge solutions.",
-        href:"",
+        href:"/work",
     },
     {
         num: "03",
         title: "Graphic Design",
         description: "Delivering creative and visually captivating designs that communicate your brand's story.",
-        href:"",
+        href:"/work",
     },
     {
         num: "04",
         title: "Coding Teacher",
         description: "Inspiring and teaching the next generation of programmers through fun, including Game/VR/AR Dev, Web Dev, Python, AI, Robotics.",
-        href:"",
+        href:"/work",
     },
 ];
 

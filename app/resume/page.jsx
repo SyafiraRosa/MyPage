@@ -124,6 +124,7 @@ const research = {
     items: [
         {
             title: "Performance Comparison of k-Nearest Neighbor Algorithm with Various k Values and Distance Metrics for Malware Detection",
+            link: "https://www.researchgate.net/publication/382629523_Performance_Comparison_of_k-Nearest_Neighbor_Algorithm_with_Various_k_Values_and_Distance_Metrics_for_Malware_Detection",
             role: "Author, Dataset Collector, Researcher",
             duration: "Oct 2023 - Jan 2024",
             details: [
@@ -133,6 +134,7 @@ const research = {
         },
         {
             title: "Malware Detection Using K-Nearest Neighbor Algorithm and Feature Selection",
+            link: "https://www.researchgate.net/publication/382632006_Malware_Detection_Using_K-Nearest_Neighbor_Algorithm_and_Feature_Selection",
             role: "Author, Dataset Collector, Researcher",
             duration: "Oct 2023 - Jan 2024",
             details: [
@@ -142,6 +144,7 @@ const research = {
         },
         {
             title: "Deep Learning Accelerator for Mixed Precision Neural Network",
+            link: "",
             role: "Model Builder, Research Collaborator",
             duration: "Nov 2022 - Nov 2023",
             details: [
@@ -151,6 +154,7 @@ const research = {
         },
         {
             title: "Conversion Model of Kepatihan Notation into MIDI Format for Generating Original Western Music",
+            link: "https://publikasi.dinus.ac.id/index.php/technoc/article/view/6672",
             role: "First Author, Model Builder, Researcher",
             duration: "Aug 2021 - Aug 2022",
             details: [
@@ -159,6 +163,7 @@ const research = {
         },
         {
             title: "Generation of Classical Music Using the Long-Short Term Memory Method",
+            link: "https://www.researchgate.net/publication/363484377_Pembangkitan_Musik_Klasik_Menggunakan_Metode_Long-Short_Term_Memory",
             role: "Author, Model Builder, Researcher",
             duration: "Aug 2021 - Aug 2022",
             details: [
@@ -444,7 +449,18 @@ const Resume = () => {
                                                 >
                                                     <span className="text-accent">{item.duration}</span>
                                                     <h4 className="text-m max-w-[260px] min-h-[60px] text-center lg:text-left">
-                                                        {item.title}
+                                                        {item.link ? (
+                                                            <a
+                                                                href={item.link} 
+                                                                target="_blank" 
+                                                                rel="noopener noreferrer" 
+                                                                className="hover:text-accent"
+                                                            >
+                                                                {item.title}
+                                                            </a>
+                                                        ) : (
+                                                            <span className="text-white">{item.title}</span> // Plain text if no link
+                                                        )}
                                                     </h4>
                                                     <div className="flex items-center gap-3">
                                                         
