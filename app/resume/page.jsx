@@ -211,6 +211,12 @@ const education = {
     description: "With a strong foundation in Informatics Engineering, I have furthered my expertise in AI, game development, and multiplayer VR development.",
     items: [
         {
+            institution: "Warsaw University of Technology",
+            degree: "Master of Computer Science",
+            grade: "",
+            duration: "Oct 2025 - Present",
+        },
+        {
             institution: "Universitas Dian Nuswantoro",
             degree: "Bachelor Degree in Informatics Engineering",
             grade: "3.85 / 4.00",
