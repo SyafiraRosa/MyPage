@@ -250,7 +250,7 @@ const organizationExperience = {
     items: [
         {
             organization: "Indonesian Students Association in Poland",
-            position: "Head of Media, Information, and Public Communication Division",
+            position: "Head of Media and Public Communication Division",
             duration: "December 2025 - Present",
         },
         {
@@ -265,7 +265,7 @@ const organizationExperience = {
         },
         {
             organization: "Senior High School 1 Ungaran",
-            position: "President of Class Representative Assembly (MPK)",
+            position: "Head of Class Representative Assembly (MPK)",
             duration: "2017 - 2018",
         },
         {
