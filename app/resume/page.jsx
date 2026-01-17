@@ -85,14 +85,14 @@ const workExperience = {
     description: "Blending teaching, programming, design, and research, I bring creativity, technical expertise, and a passion for innovation and education.",
     items: [
         {
-            organization: "Timedoor Academy",
-            position: "Part-Time Programming Teacher",
-            duration: "Nov 2024 - Present",
-        },
-        {
             organization: "CSAC Research Lab UDINUS",
             position: "Contract Game Programmer",
             duration: "May 2024 - Present",
+        },
+        {
+            organization: "Timedoor Academy",
+            position: "Part-Time Programming Teacher",
+            duration: "Nov 2024 - September 2025",
         },
         {
             organization: "Public Relation of UDINUS",
@@ -249,7 +249,12 @@ const organizationExperience = {
     description: "Proven leadership in guiding teams, managing communication, and driving technology-focused initiatives.",
     items: [
         {
-            organization: "Student Executive Board (BEM-KM)",
+            organization: "Indonesian Students Association in Poland",
+            position: "Head of Media, Information, and Public Communication Division",
+            duration: "December 2025 - Present",
+        },
+        {
+            organization: "Student Executive Board (BEM-KM) UDINUS",
             position: "Head of Communication and Informatics Bureau",
             duration: "Aug 2020 - Jul 2021",
         },
@@ -257,6 +262,16 @@ const organizationExperience = {
             organization: "Dian Nuswantoro Computer Club (DNCC)",
             position: "Head of Mobile Developer Division",
             duration: "Aug 2020 - Jul 2021",
+        },
+        {
+            organization: "Senior High School 1 Ungaran",
+            position: "President of Class Representative Assembly (MPK)",
+            duration: "2017 - 2018",
+        },
+        {
+            organization: "Junior High School 3 Ungaran",
+            position: "President of the Student Council (OSIS)",
+            duration: "2017 - 2018",
         },
     ]
 };
