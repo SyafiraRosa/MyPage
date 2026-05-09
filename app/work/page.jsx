@@ -113,7 +113,7 @@ const projects = [
         category: "Graphic Design",
         title: "My Design",
         description: "I offer creative graphic design services, including eye-catching IG feed designs, IG stories, web banners, billboards, virtual backgrounds, virtual stages, IG story filters, and much more.",
-        stack: [{ name: "Adobe Illustrator"}, {name: "Adobe After Effects"}, {name: "Adobe Photoshop"}],
+        stack: [{ name: "Adobe Illustrator"}, {name: "Adobe After Effects"}, {name: "Adobe Photoshop"}, {name: "Figma"}, {name: "Canva"}],
         image: "/assets/3.png",
         video: "",
         live: "https://sticky-feather-756.notion.site/My-Design-4d6a4c177c7c48cc84757cc5c546ca2f",
