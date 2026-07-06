@@ -18,12 +18,24 @@ const services = [
     },
     {
         num: "03",
+        title: "Software Developer",
+        description: "Building robust, scalable, and efficient software applications tailored to meet specific user needs.",
+        href:"/work",
+    },
+    {
+        num: "04",
+        title: "Website Developer",
+        description: "Designing and developing responsive, modern, and high-performance websites for a strong online presence.",
+        href:"/work",
+    },
+    {
+        num: "05",
         title: "Graphic Design",
         description: "Delivering creative and visually captivating designs that communicate your brand's story.",
         href:"/work",
     },
     {
-        num: "04",
+        num: "06",
         title: "Coding Teacher",
         description: "Inspiring and teaching the next generation of programmers through fun, including Game/VR/AR Dev, Web Dev, Python, AI, Robotics.",
         href:"/work",

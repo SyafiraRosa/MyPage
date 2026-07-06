@@ -391,8 +391,58 @@ import {
 
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { client } from "../../sanity/lib/client";
+import { groq } from "next-sanity";
+
+const iconMap = {
+    FaUnity: <FaUnity />,
+    FaHtml5: <FaHtml5 />,
+    FaCss3: <FaCss3 />,
+    FaJs: <FaJs />,
+    FaPhp: <FaPhp />,
+    FaPython: <FaPython />,
+    FaFigma: <FaFigma />,
+    TbBrandCSharp: <TbBrandCSharp />,
+    SiCplusplus: <SiCplusplus />,
+    SiAnaconda: <SiAnaconda />,
+    SiJupyter: <SiJupyter />,
+    SiAdobeillustrator: <SiAdobeillustrator />,
+    SiAdobephotoshop: <SiAdobephotoshop />,
+    SiAdobeaftereffects: <SiAdobeaftereffects />,
+    SiAdobepremierepro: <SiAdobepremierepro />,
+    SiConstruct3: <SiConstruct3 />,
+    SiRobloxstudio: <SiRobloxstudio />,
+    SiAseprite: <SiAseprite />,
+    SiCanva: <SiCanva />,
+};
 
 const Resume = () => {
+    const [data, setData] = useState({
+        workExperience: [],
+        organizationExperience: [],
+        education: [],
+        research: [],
+        skills: []
+    });
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const query = groq`{
+                "workExperience": *[_type == "workExperience"] | order(startDate desc),
+                "organizationExperience": *[_type == "organizationExperience"] | order(startDate desc),
+                "education": *[_type == "education"] | order(startDate desc),
+                "research": *[_type == "research"] | order(startDate desc),
+                "skills": *[_type == "skills"] | order(name asc)
+            }`;
+            const result = await client.fetch(query);
+            setData(result);
+            setIsLoading(false);
+        };
+        fetchData();
+    }, []);
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -430,7 +480,7 @@ const Resume = () => {
                                 </p>
                                 <ScrollArea className="h-[400px]">
                                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[25px]">
-                                        {workExperience.items.map((item, index) => {
+                                        {data.workExperience.map((item, index) => {
                                             return (
                                                 <li
                                                     key={index}
@@ -462,7 +512,7 @@ const Resume = () => {
                                 </p>
                                 <ScrollArea className="h-[400px]">
                                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[25px]">
-                                        {research.items.map((item, index) => {
+                                        {data.research.map((item, index) => {
                                             return (
                                                 <li
                                                     key={index}
@@ -491,7 +541,7 @@ const Resume = () => {
                                                     </div>
                                                     {/* Render multiple dots and details */}
                                                     <div className="flex flex-col gap-2">
-                                                        {item.details.map((detail, i) => (
+                                                        {item.details && item.details.map((detail, i) => (
                                                             <div
                                                                 key={i}
                                                                 className="flex items-start gap-3"
@@ -567,7 +617,7 @@ const Resume = () => {
                                 </p>
                                 <ScrollArea className="h-[400px]">
                                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[25px]">
-                                        {education.items.map((item, index) => {
+                                        {data.education.map((item, index) => {
                                             return (
                                                 <li
                                                     key={index}
@@ -609,7 +659,7 @@ const Resume = () => {
                                 </p>
                                 <ScrollArea className="h-[400px]">
                                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[25px]">
-                                        {organizationExperience.items.map((item, index) => {
+                                        {data.organizationExperience.map((item, index) => {
                                             return (
                                                 <li
                                                     key={index}
@@ -645,16 +695,16 @@ const Resume = () => {
                                     <p className="max-w-[800px] text-white/60 mx-auto xl:mx-0">{skills.description}</p>
                                 </div>
                                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 xl:gap-[30px]">
-                                    {skills.items.map((items,index) => {
+                                    {data.skills.map((item, index) => {
                                         return (
                                         <li key={index}>
                                             <TooltipProvider delayDuration={100}>
                                                 <Tooltip>
                                                     <TooltipTrigger className="w-full h-[120px] bg-[#2d2f42] rounded-xl flex justify-center items-center group">
-                                                        <div className="text-5xl group-hover:text-accent transition-all duration-300">{items.icon}</div>
+                                                        <div className="text-5xl group-hover:text-accent transition-all duration-300">{iconMap[item.iconName] || <span className="text-sm">?</span>}</div>
                                                     </TooltipTrigger>
                                                     <TooltipContent>
-                                                        <p className="capitalize">{items.name}</p>
+                                                        <p className="capitalize">{item.name}</p>
                                                     </TooltipContent>
                                                 </Tooltip>
                                             </TooltipProvider>
